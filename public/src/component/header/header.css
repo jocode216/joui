@@ -1,0 +1,259 @@
+/* ===== HEADER BASE ===== */
+.header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+/* ===== HEADER LAYOUT ===== */
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+/* ===== LOGO ===== */
+.logo {
+  color: #1f2937;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* ===== DESKTOP NAVIGATION ===== */
+.desktop-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.desktop-nav a {
+  color: #374151;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.desktop-nav a:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* ===== USER SECTION ===== */
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: #ede0d0;
+  padding: 6px 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.user-info span {
+  color: #000;
+  font-weight: 500;
+}
+
+.user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #d1d5db;
+  object-fit: cover;
+}
+
+/* ===== BUTTONS ===== */
+button {
+  background: red !important;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #ede0d0;
+}
+
+/* Style for sign-in button (when user not logged in) */
+.user-section a button {
+  background: #ede0d0;
+}
+
+.user-section a button:hover {
+  background: #ede0d0;
+}
+
+/* ===== HAMBURGER MENU ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #1f2937;
+  transition: 0.3s;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* ===== MOBILE MENU ===== */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 260px;
+  height: 100vh;
+  background: #ffffff;
+  transition: 0.3s ease;
+  z-index: 1001;
+  padding: 80px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 12px 16px;
+  color: #1f2937;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.mobile-menu a:hover {
+  background: #f3f4f6;
+}
+
+/* ===== MOBILE AUTH SECTION ===== */
+.mobile-auth {
+  margin-top: auto;
+}
+
+.user-details {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding: 10px;
+  background: #ffff;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.user-details img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid #d1d5db;
+}
+
+.user-details span {
+  font-weight: 600;
+  color: #000;
+}
+
+.mobile-auth button {
+  width: 100%;
+  background: red;
+  border: none;
+  padding: 12px;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.mobile-auth button:hover {
+  background: #dc2626;
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  cursor: pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .desktop-nav,
+  .user-section {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .header-content {
+    padding: 0 15px;
+    height: 60px;
+  }
+}
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #000;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+.avatar.mobile {
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+}

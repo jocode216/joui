@@ -1,0 +1,497 @@
+/* pricing.css */
+
+.pricing-page {
+  width: 100%;
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.pricing-hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+  padding: 3rem 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1f2937;
+  line-height: 1.2;
+}
+
+.hero-highlight {
+  color: #dc2626;
+  font-weight: 800;
+}
+
+.hero-subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  max-width: 48rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-quote {
+  font-size: 1.25rem;
+  font-style: italic;
+  margin: 2rem auto 0;
+  color: #1f2937;
+  line-height: 1.6;
+  max-width: 36rem;
+  font-weight: 500;
+  padding: 1.25rem;
+  border-left: 3px solid #dc2626;
+  background-color: rgba(220, 38, 38, 0.03);
+  border-radius: 0.5rem;
+}
+
+/* Pricing Section */
+.pricing-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #1f2937;
+}
+
+.section-highlight {
+  color: #dc2626;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+/* Pricing Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.pricing-card {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 2px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-card.popular {
+  border-color: #dc2626;
+  box-shadow: 0 8px 24px rgba(220, 38, 38, 0.1);
+}
+
+.popular-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #dc2626;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-bottom-left-radius: 12px;
+}
+
+.card-header {
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.plan-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.plan-price {
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1f2937;
+  display: block;
+  line-height: 1;
+}
+
+.period {
+  font-size: 1rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.plan-description {
+  font-size: 0.9375rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+.card-content {
+  padding: 2rem;
+  flex: 1;
+}
+
+/* Features Section */
+.features-section {
+  margin-bottom: 2rem;
+}
+
+.features-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.feature-icon {
+  color: #059669;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.feature-text {
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 0.9375rem;
+}
+
+/* Not Included Section */
+.not-included-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.not-included-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.not-included-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.not-included-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.not-included-icon {
+  color: #dc2626;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.not-included-text {
+  color: #9ca3af;
+  line-height: 1.6;
+  font-size: 0.9375rem;
+  text-decoration: line-through;
+}
+
+/* Card Footer */
+.card-footer {
+  padding: 1.5rem 2rem;
+  background: #f9fafb;
+  border-top: 1px solid #e5e7eb;
+}
+
+.select-btn {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #dc2626;
+  color: white;
+}
+
+.select-btn:hover {
+  background-color: #b91c1c;
+  transform: translateY(-2px);
+}
+
+.pricing-card.popular .select-btn {
+  background-color: #1f2937;
+}
+
+.pricing-card.popular .select-btn:hover {
+  background-color: #374151;
+}
+
+/* Comparison Table */
+.comparison-section {
+  margin: 4rem 0;
+}
+
+.comparison-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #1f2937;
+}
+
+.comparison-table {
+  overflow-x: auto;
+}
+
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.comparison-table th {
+  background: #f9fafb;
+  padding: 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #1f2937;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.comparison-table th:first-child {
+  border-top-left-radius: 12px;
+}
+
+.comparison-table th:last-child {
+  border-top-right-radius: 12px;
+}
+
+.comparison-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #6b7280;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table td:first-child {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* FAQ Section */
+.faq-section {
+  margin: 4rem 0;
+}
+
+.faq-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #1f2937;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.faq-item {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.faq-item h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #1f2937;
+}
+
+.faq-item p {
+  font-size: 0.9375rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: 3rem;
+  background: linear-gradient(135deg, #fef2f2 0%, #fafafa 100%);
+  border-radius: 12px;
+  margin-top: 4rem;
+}
+
+.cta-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.cta-subtitle {
+  font-size: 1.125rem;
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 48rem;
+  margin: 0 auto 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 180px;
+}
+
+.cta-btn.primary {
+  background-color: #dc2626;
+  color: white;
+}
+
+.cta-btn.primary:hover {
+  background-color: #b91c1c;
+  transform: translateY(-2px);
+}
+
+.cta-btn.secondary {
+  background-color: transparent;
+  color: #1f2937;
+  border-color: #1f2937;
+}
+
+.cta-btn.secondary:hover {
+  background-color: #1f2937;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .price {
+    font-size: 2.5rem;
+  }
+  
+  .comparison-table {
+    font-size: 0.875rem;
+  }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+  }
+  
+  .cta-btn {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

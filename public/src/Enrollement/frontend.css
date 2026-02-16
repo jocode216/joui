@@ -1,0 +1,270 @@
+
+/* adminmenu.css */
+
+/* Base Styles */
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 90%;
+  margin: 20px auto;
+  min-height: 70vh;
+  padding-bottom: 50px;
+}
+
+/* Card Base Style */
+.card {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.card h3 {
+  margin: 12px 0 8px;
+  font-size: clamp(18px, 4vw, 22px);
+  font-weight: 700;
+  color: #333;
+  line-height: 1.3;
+}
+
+.card p {
+  font-size: clamp(14px, 3vw, 16px);
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.admin-btn {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.admin-btn button {
+  flex: 1;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: clamp(14px, 3vw, 16px);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.admin-btn button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Mobile: < 500px - 100% width */
+@media (max-width: 500px) {
+  .wrapper {
+    width: 95%;
+    gap: 15px;
+    padding: 10px;
+  }
+  
+  .card {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    padding: 12px;
+  }
+  
+  .card img {
+    height: 180px;
+  }
+  
+  .admin-btn {
+    flex-direction: column;
+  }
+}
+
+/* Small Tablet: 500px - 768px - 80% width */
+@media (min-width: 501px) and (max-width: 768px) {
+  .wrapper {
+    width: 95%;
+    gap: 15px;
+    padding: 10px;
+  }
+  
+  .card {
+    flex: 0 0 calc(80% - 20px) !important;
+    max-width: calc(80% - 20px) !important;
+    margin: 0 auto;
+    padding: 12px;
+  }
+  
+  .card img {
+    height: 180px;
+  }
+  
+  .admin-btn {
+    flex-direction: column;
+  }
+}
+
+/* Desktop: > 768px - Pattern layout */
+@media (min-width: 769px) {
+  .wrapper {
+    gap: 20px;
+  }
+  
+  /* Pattern: 
+     Card 1: 60% (span 3 of 5 columns)
+     Card 2: 40% (span 2 of 5 columns)
+     Card 3: 50% (span 2.5 of 5 columns)
+     Card 4: 50% (span 2.5 of 5 columns)
+     Card 5: 40% (span 2 of 5 columns)
+     Card 6: 60% (span 3 of 5 columns)
+     Card 7: 50% (span 2.5 of 5 columns)
+     Card 8: 50% (span 2.5 of 5 columns)
+     Pattern repeats every 8 cards
+  */
+  
+  /* First 8 cards pattern */
+  .card:nth-child(8n+1) { /* Card 1, 9, 17... */
+    flex: 0 0 calc(60% - 20px) !important;
+    max-width: calc(60% - 20px) !important;
+  }
+  
+  .card:nth-child(8n+2) { /* Card 2, 10, 18... */
+    flex: 0 0 calc(40% - 20px) !important;
+    max-width: calc(40% - 20px) !important;
+  }
+  
+  .card:nth-child(8n+3),
+  .card:nth-child(8n+4) { /* Cards 3,4, 11,12, 19,20... */
+    flex: 0 0 calc(50% - 20px) !important;
+    max-width: calc(50% - 20px) !important;
+  }
+  
+  .card:nth-child(8n+5) { /* Card 5, 13, 21... */
+    flex: 0 0 calc(40% - 20px) !important;
+    max-width: calc(40% - 20px) !important;
+  }
+  
+  .card:nth-child(8n+6) { /* Card 6, 14, 22... */
+    flex: 0 0 calc(60% - 20px) !important;
+    max-width: calc(60% - 20px) !important;
+  }
+  
+  .card:nth-child(8n+7),
+  .card:nth-child(8n+8) { /* Cards 7,8, 15,16, 23,24... */
+    flex: 0 0 calc(50% - 20px) !important;
+    max-width: calc(50% - 20px) !important;
+  }
+}
+
+/* Tablet: 769px - 1024px - Adjust for better fit */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .card:nth-child(8n+1),
+  .card:nth-child(8n+6) {
+    flex: 0 0 calc(55% - 20px) !important;
+    max-width: calc(55% - 20px) !important;
+  }
+  
+  .card:nth-child(8n+2),
+  .card:nth-child(8n+5) {
+    flex: 0 0 calc(45% - 20px) !important;
+    max-width: calc(45% - 20px) !important;
+  }
+  
+  .card:nth-child(8n+3),
+  .card:nth-child(8n+4),
+  .card:nth-child(8n+7),
+  .card:nth-child(8n+8) {
+    flex: 0 0 calc(50% - 20px) !important;
+    max-width: calc(50% - 20px) !important;
+  }
+}
+
+/* Large Desktop: > 1025px - Keep original pattern */
+@media (min-width: 1025px) {
+  .card:nth-child(8n+1),
+  .card:nth-child(8n+6) {
+    flex: 0 0 calc(60% - 20px) !important;
+    max-width: calc(60% - 20px) !important;
+  }
+  
+  .card:nth-child(8n+2),
+  .card:nth-child(8n+5) {
+    flex: 0 0 calc(40% - 20px) !important;
+    max-width: calc(40% - 20px) !important;
+  }
+  
+  .card:nth-child(8n+3),
+  .card:nth-child(8n+4),
+  .card:nth-child(8n+7),
+  .card:nth-child(8n+8) {
+    flex: 0 0 calc(50% - 20px) !important;
+    max-width: calc(50% - 20px) !important;
+  }
+}
+
+/* Remove min-width and max-height from cards */
+.card {
+  min-width: unset !important;
+  max-height: unset !important;
+}
+
+/* Animation for staggered appearance */
+.card {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+.card:nth-child(6) { animation-delay: 0.6s; }
+.card:nth-child(7) { animation-delay: 0.7s; }
+.card:nth-child(8) { animation-delay: 0.8s; }
+.card:nth-child(9) { animation-delay: 0.9s; }
+.card:nth-child(10) { animation-delay: 1.0s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Styling for the free badge */
+.card p span[style*="color: #ff6b35"] {
+  color: #ff6b35 !important;
+  font-size: 1.25rem !important;
+  font-weight: bold !important;
+  display: block !important;
+  margin-top: 8px !important;
+}
+
+/* Button styling based on inline styles */
+.admin-btn button[style*="background: gray"] {
+  background: #dc2626 !important;
+  color: white !important;
+}
+
+.admin-btn button[style*="background: gray"][style*="color: white"] {
+  background: #059669 !important;
+  color: white !important;
+}
+

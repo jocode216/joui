@@ -1,0 +1,521 @@
+/* about.css */
+
+.about {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* Hero Section */
+.about-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #fafafa 0%, #ffffff 100%);
+}
+
+.about-hero-content {
+  text-align: center;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.about-hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #1f2937;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.about-hero-highlight {
+  color: #dc2626;
+  font-weight: 800;
+  position: relative;
+}
+
+.about-hero-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #dc2626;
+  opacity: 0.3;
+}
+
+.about-mission {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;
+  border-left: 4px solid #dc2626;
+}
+
+.about-hero-subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  color: #374151;
+  line-height: 1.6;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.about-story {
+  font-size: 1.125rem;
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.about-hero-quote {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin: 2.5rem auto;
+  color: #1f2937;
+  line-height: 1.8;
+  max-width: 36rem;
+  font-weight: 500;
+  padding: 1.5rem;
+  border: 2px solid #dc2626;
+  background-color: rgba(220, 38, 38, 0.02);
+  border-radius: 0.5rem;
+}
+
+.about-hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.about-hero-btn {
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  display: inline-block;
+  min-width: 160px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.about-hero-btn.primary {
+  background-color: #dc2626;
+  color: white;
+}
+
+.about-hero-btn.primary:hover {
+  background-color: #b91c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 38, 38, 0.3);
+}
+
+.about-hero-btn.secondary {
+  background-color: transparent;
+  color: #1f2937;
+  border-color: #1f2937;
+}
+
+.about-hero-btn.secondary:hover {
+  background-color: #1f2937;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Section Common Styles */
+.about-different,
+.about-approach,
+.about-vision,
+.about-faq,
+.about-cta {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1f2937;
+}
+
+.about-section-highlight {
+  color: #dc2626;
+  position: relative;
+}
+
+.about-section-highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #dc2626;
+  opacity: 0.3;
+}
+
+/* What Makes Jocode Different */
+.about-philosophy {
+  font-size: 1.5rem;
+  font-style: italic;
+  text-align: center;
+  margin: 2rem auto 4rem;
+  color: #4b5563;
+  max-width: 48rem;
+  line-height: 1.8;
+}
+
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.about-feature {
+  padding: 2rem;
+  border-radius: 12px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.about-feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  border-color: #dc2626;
+}
+
+.feature-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.about-feature h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.about-feature p {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Our Approach */
+.approach-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.approach-step {
+  padding: 2rem;
+  border-radius: 12px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.approach-step:hover {
+  border-color: #dc2626;
+}
+
+.step-number {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  background: #dc2626;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.approach-step h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 1rem 0 0.75rem 0;
+  color: #1f2937;
+}
+
+.approach-step p {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Future Vision */
+.vision-content {
+  background: #f9fafb;
+  padding: 2.5rem;
+  border-radius: 12px;
+  border-left: 4px solid #dc2626;
+}
+
+.vision-content p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.vision-list {
+  list-style: none;
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+}
+
+.vision-list li {
+  font-size: 1.125rem;
+  color: #6b7280;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+.vision-list strong {
+  color: #1f2937;
+}
+
+.vision-note {
+  font-style: italic;
+  color: #dc2626 !important;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(220, 38, 38, 0.05);
+  border-radius: 8px;
+}
+
+/* FAQ Section */
+.faq-container {
+  margin-top: 3rem;
+}
+
+.faq-item {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  border-color: #dc2626;
+  transform: translateY(-2px);
+}
+
+.faq-item h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.faq-item p {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* Final CTA */
+.about-cta {
+  text-align: center;
+  background: linear-gradient(135deg, #fef2f2 0%, #fafafa 100%);
+  border-radius: 16px;
+  padding: 4rem 2rem;
+  margin: 4rem auto;
+}
+
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1f2937;
+}
+
+.cta-subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  line-height: 1.6;
+  max-width: 48rem;
+  margin: 0 auto 2.5rem;
+}
+
+.cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 2.5rem 0;
+  flex-wrap: wrap;
+}
+
+.cta-btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  min-width: 180px;
+  text-align: center;
+}
+
+.cta-btn.primary {
+  background-color: #dc2626;
+  color: white;
+}
+
+.cta-btn.primary:hover {
+  background-color: #b91c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(220, 38, 38, 0.3);
+}
+
+.cta-btn.secondary {
+  background-color: transparent;
+  color: #1f2937;
+  border-color: #1f2937;
+}
+
+.cta-btn.secondary:hover {
+  background-color: #1f2937;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.cta-quote {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #4b5563;
+  max-width: 48rem;
+  margin: 3rem auto 0;
+  padding: 2rem;
+  border-top: 2px solid #e5e7eb;
+}
+
+/* Animations */
+.about-hero-title,
+.about-mission,
+.about-hero-quote,
+.about-hero-actions,
+.about-section-title,
+.about-philosophy,
+.about-features,
+.approach-steps,
+.vision-content,
+.faq-container,
+.about-cta {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.about-hero-title { animation-delay: 0.1s; }
+.about-mission { animation-delay: 0.2s; }
+.about-hero-quote { animation-delay: 0.3s; }
+.about-hero-actions { animation-delay: 0.4s; }
+.about-section-title { animation-delay: 0.1s; }
+.about-philosophy { animation-delay: 0.2s; }
+.about-features { animation-delay: 0.3s; }
+.approach-steps { animation-delay: 0.4s; }
+.vision-content { animation-delay: 0.5s; }
+.faq-container { animation-delay: 0.6s; }
+.about-cta { animation-delay: 0.7s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-hero-title {
+    font-size: 2rem;
+  }
+  
+  .about-hero-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .about-section-title {
+    font-size: 2rem;
+  }
+  
+  .about-philosophy {
+    font-size: 1.25rem;
+  }
+  
+  .cta-title {
+    font-size: 2rem;
+  }
+  
+  .cta-subtitle {
+    font-size: 1.125rem;
+  }
+  
+  .about-hero-actions,
+  .cta-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .about-hero-btn,
+  .cta-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .vision-content,
+  .about-feature,
+  .approach-step,
+  .faq-item {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .about-section-title {
+    font-size: 3rem;
+  }
+  
+  .about-features {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .approach-steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

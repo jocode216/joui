@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jocode Job Application - Join Our Team</title>
+</head>
+<body>
+  <!-- Header Section -->
+  <header role="banner">
+    <h1>Jocode Job Application</h1>
+    <h2>Join Ethiopia's Leading Tech Education Platform</h2>
+    <p><strong>We're hiring:</strong> Frontend Developer • Fullstack Developer • UI/UX Designer • Content Creator • Online Tutor</p>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main" role="main">
+    <!-- Introduction Section -->
+    <section aria-labelledby="intro-heading">
+      <h3 id="intro-heading">About Jocode</h3>
+      <article>
+        <p>Jocode is <mark>Ethiopia's fastest-growing</mark> tech education platform. We teach programming and tech skills in Amharic to thousands of students across the country.</p>
+        <blockquote>
+          "Empowering the next generation of Ethiopian developers"
+        </blockquote>
+      </article>
+    </section>
+
+    <!-- Job Application Form -->
+    <section aria-labelledby="form-heading">
+      <h3 id="form-heading">Application Form</h3>
+      
+      <form action="https://getform.io/f/your-getform-endpoint-here" method="POST" enctype="multipart/form-data">
+        
+        <!-- Personal Information Section -->
+        <fieldset>
+          <legend><h4>Personal Information</h4></legend>
+          
+          <!-- 1. Full Name -->
+          <div>
+            <label for="fullname">Full Name <strong>*</strong></label>
+            <input type="text" id="fullname" name="fullname" required placeholder="Yosef Teka">
+          </div>
+
+          <!-- 2. Email -->
+          <div>
+            <label for="email">Email Address <strong>*</strong></label>
+            <input type="email" id="email" name="email" required placeholder="yosef@jocode.com">
+          </div>
+
+          <!-- 3. Phone (Ethiopian format) -->
+          <div>
+            <label for="phone">Phone Number <strong>*</strong></label>
+            <input type="tel" id="phone" name="phone" required 
+                   placeholder="+251911223344" 
+                   title="Ethiopian phone number format: +2519xxxxxxxx">
+          </div>
+        </fieldset>
+
+        <!-- Professional Information Section -->
+        <fieldset>
+          <legend><h4>Professional Information</h4></legend>
+
+          <!-- 4. Position Applying For -->
+          <div>
+            <label for="position">Position You're Applying For <strong>*</strong></label>
+            <select id="position" name="position" required>
+              <option value="">-- Select Position --</option>
+              <option value="frontend">Frontend Developer</option>
+              <option value="fullstack">Fullstack Developer</option>
+              <option value="designer">UI/UX Designer</option>
+              <option value="content">Content Creator (Amharic/English)</option>
+              <option value="tutor">Online Programming Tutor</option>
+              <option value="editor">Video Editor</option>
+              <option value="community">Community Manager</option>
+            </select>
+          </div>
+
+          <!-- 5. Experience Level -->
+          <div>
+            <label for="experience">Years of Experience <strong>*</strong></label>
+            <select id="experience" name="experience" required>
+              <option value="">-- Select Experience --</option>
+              <option value="0-1">0-1 years (Beginner)</option>
+              <option value="1-3">1-3 years (Junior)</option>
+              <option value="3-5">3-5 years (Mid-level)</option>
+              <option value="5+">5+ years (Senior)</option>
+            </select>
+          </div>
+
+          <!-- 6. Expected Salary -->
+          <div>
+            <label for="salary">Expected Salary (ETB per month)</label>
+            <input type="number" id="salary" name="salary" min="5000" max="200000" placeholder="25000">
+          </div>
+
+          <!-- 7. Available Start Date -->
+          <div>
+            <label for="startdate">When can you start? <strong>*</strong></label>
+            <input type="date" id="startdate" name="startdate" required>
+          </div>
+        </fieldset>
+
+        <!-- Documents & Links Section -->
+        <fieldset>
+          <legend><h4>Documents & Links</h4></legend>
+
+          <!-- 8. Upload CV/Resume -->
+          <div>
+            <label for="cv">Upload Your CV/Resume (PDF only) <strong>*</strong></label>
+            <input type="file" id="cv" name="cv" accept=".pdf" required>
+          </div>
+
+          <!-- 9. Portfolio/GitHub Links -->
+          <div>
+            <label for="portfolio">Portfolio or GitHub Link</label>
+            <input type="url" id="portfolio" name="portfolio" placeholder="https://github.com/yourusername">
+          </div>
+
+          <!-- 10. LinkedIn Profile -->
+          <div>
+            <label for="linkedin">LinkedIn Profile (Optional)</label>
+            <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+          </div>
+        </fieldset>
+
+        <!-- Additional Information Section -->
+        <fieldset>
+          <legend><h4>Additional Information</h4></legend>
+
+          <!-- 11. Why Jocode? -->
+          <div>
+            <label for="message">Why do you want to join Jocode? <strong>*</strong></label>
+            <textarea id="message" name="message" rows="5" required 
+                      placeholder="Tell us why you're interested in working with Jocode and what you can bring to our team..."></textarea>
+          </div>
+
+          <!-- 12. How did you hear about us? -->
+          <div>
+            <label for="referral">How did you hear about this job?</label>
+            <select id="referral" name="referral">
+              <option value="">-- Select Option --</option>
+              <option value="telegram">Jocode Telegram Channel</option>
+              <option value="website">Jocode Website</option>
+              <option value="friend">Friend/Colleague</option>
+              <option value="social">Social Media</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <!-- Skills & Availability Section -->
+        <fieldset>
+          <legend><h4>Skills & Availability</h4></legend>
+
+          <!-- 13. Availability -->
+          <div>
+            <label><strong>Available for:</strong></label>
+            <div>
+              <input type="checkbox" id="fulltime" name="availability" value="fulltime">
+              <label for="fulltime">Full-time</label>
+            </div>
+            <div>
+              <input type="checkbox" id="parttime" name="availability" value="parttime">
+              <label for="parttime">Part-time</label>
+            </div>
+            <div>
+              <input type="checkbox" id="remote" name="availability" value="remote">
+              <label for="remote">Remote work only</label>
+            </div>
+          </div>
+
+          <!-- 14. Skills Checkbox -->
+          <div>
+            <label><strong>Your Skills</strong> (Select all that apply):</label>
+            <div>
+              <input type="checkbox" id="html" name="skills" value="html">
+              <label for="html">HTML</label>
+            </div>
+            <div>
+              <input type="checkbox" id="javascript" name="skills" value="javascript">
+              <label for="javascript">JavaScript</label>
+            </div>
+            <div>
+              <input type="checkbox" id="react" name="skills" value="react">
+              <label for="react">React</label>
+            </div>
+            <div>
+              <input type="checkbox" id="node" name="skills" value="node">
+              <label for="node">Node.js</label>
+            </div>
+            <div>
+              <input type="checkbox" id="python" name="skills" value="python">
+              <label for="python">Python</label>
+            </div>
+            <div>
+              <input type="checkbox" id="design" name="skills" value="design">
+              <label for="design">UI/UX Design</label>
+            </div>
+            <div>
+              <input type="checkbox" id="video" name="skills" value="video">
+              <label for="video">Video Editing</label>
+            </div>
+            <div>
+              <input type="checkbox" id="teaching" name="skills" value="teaching">
+              <label for="teaching">Teaching/Tutoring</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Agreement Section -->
+        <fieldset>
+          <legend><h4>Final Steps</h4></legend>
+
+          <!-- 15. Agreement -->
+          <div>
+            <input type="checkbox" id="agree" name="agree" required>
+            <label for="agree">
+              I confirm that all information provided is <strong>accurate and true</strong>
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <button type="submit">Submit Application</button>
+            <button type="reset">Reset Form</button>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+
+    <!-- Recently Hired Team Members -->
+    <aside aria-labelledby="team-heading">
+      <h3 id="team-heading">Our Recent Hires</h3>
+      <table style="border-collapse: collapse; width: 100%;">
+        <thead>
+          <tr>
+            <th style="border: 1px solid #000; padding: 8px;">Name</th>
+            <th style="border: 1px solid #000; padding: 8px;">Position</th>
+            <th style="border: 1px solid #000; padding: 8px;">Joined</th>
+            <th style="border: 1px solid #000; padding: 8px;">Skills</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="border: 1px solid #000; padding: 8px;">Alemayehu <strong>Kassa</strong></td>
+            <td style="border: 1px solid #000; padding: 8px;">Frontend Developer</td>
+            <td style="border: 1px solid #000; padding: 8px;">Jan 2024</td>
+            <td style="border: 1px solid #000; padding: 8px;">
+              <code>React</code>, <code>JavaScript</code>, <code>HTML/CSS</code>
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #000; padding: 8px;">Meron <em>Tekle</em></td>
+            <td style="border: 1px solid #000; padding: 8px;">Content Creator</td>
+            <td style="border: 1px solid #000; padding: 8px;">Feb 2024</td>
+            <td style="border: 1px solid #000; padding: 8px;">
+              Video Editing, <mark>Amharic</mark> Content
+            </td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid #000; padding: 8px;">Dawit <small>Girma</small></td>
+            <td style="border: 1px solid #000; padding: 8px;">Fullstack Developer</td>
+            <td style="border: 1px solid #000; padding: 8px;">Mar 2024</td>
+            <td style="border: 1px solid #000; padding: 8px;">
+              <code>Node.js</code>, <code>Python</code>, <code>MongoDB</code>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4" style="border: 1px solid #000; padding: 8px; text-align: center;">
+              <strong>Join our growing team!</strong>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </aside>
+
+    <!-- Technical Requirements -->
+    <section aria-labelledby="tech-heading">
+      <h3 id="tech-heading">Technical Requirements</h3>
+      <h4>For Developer Positions</h4>
+      <ul>
+        <li>Proficiency in <code>HTML5</code>, <code>CSS3</code>, and <code>JavaScript</code></li>
+        <li>Experience with modern frameworks like <code>React</code> or <code>Vue.js</code></li>
+        <li>Understanding of responsive design principles</li>
+      </ul>
+      
+      <h4>For Content Creator Positions</h4>
+      <ol>
+        <li>Excellent communication skills in <strong>Amharic</strong> and <strong>English</strong></li>
+        <li>Ability to explain complex technical concepts simply</li>
+        <li>Experience with video editing software</li>
+      </ol>
+    </section>
+
+    <!-- Contact Information -->
+    <section aria-labelledby="contact-heading">
+      <h3 id="contact-heading">Need Help?</h3>
+      <p>If you have any questions about the application process:</p>
+      <dl>
+        <dt><strong>Email:</strong></dt>
+        <dd>jobs@jocode.com</dd>
+        
+        <dt><strong>Telegram:</strong></dt>
+        <dd>@jocode</dd>
+        
+        <dt><strong>Phone:</strong></dt>
+        <dd>+251 911 223 344</dd>
+        
+        <dt><strong>Office Hours:</strong></dt>
+        <dd>Monday - Friday, 9:00 AM - 5:00 PM EAT</dd>
+      </dl>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo">
+    <hr>
+    <p>&copy; 2024 Jocode - Empowering Ethiopian Developers</p>
+    <p>Follow us: 
+      <a href="https://t.me/jocode" target="_blank" rel="noopener">Telegram</a> | 
+      <a href="https://youtube.com/jocode" target="_blank" rel="noopener">YouTube</a> |
+      <a href="https://github.com/jocode" target="_blank" rel="noopener">GitHub</a>
+    </p>
+    <p><small>Building the future of tech education in Ethiopia, one student at a time.</small></p>
+  </footer>
+</body>
+</html>

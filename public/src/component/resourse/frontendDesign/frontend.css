@@ -1,0 +1,203 @@
+.resources-section {
+  background: #fff;
+  color: #111;
+  padding: 80px 20px;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* === Container === */
+.resources-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === Header === */
+.resources-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.resources-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.resources-subtitle {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === Filter Buttons === */
+.resources-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  background: #000 !important;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.filter-btn:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+.filter-btn.active {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* === Grid Layout === */
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* === Resource Card === */
+.resource-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 14px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.resource-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border-color: #ddd;
+}
+
+/* === Category Title === */
+.resource-category {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 16px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+}
+
+/* === Resource List === */
+.resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* === Resource Item === */
+.resource-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px dashed #eee;
+}
+
+.resource-item:last-child {
+  border-bottom: none;
+}
+
+.resource-info {
+  flex: 1;
+}
+
+.resource-name {
+  font-weight: 600;
+  color: #111;
+  transition: color 0.3s ease;
+}
+
+.resource-name:hover {
+  color: #007bff;
+}
+
+.resource-desc {
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* === Resource Button (↗ Link Icon) === */
+.resource-btn {
+  background: #f4f4f4;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #111;
+  padding: 6px 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.resource-btn:hover {
+  background: #111;
+  color: #fff;
+  transform: scale(1.1);
+}
+/* === Ensure all text in resource items is left-aligned === */
+.resource-card,
+.resource-info,
+.resource-name,
+.resource-desc,
+.resource-category {
+  text-align: left !important;
+}
+
+/* === Prevent external styles from overriding your design === */
+.resources-section,
+.resource-card,
+.resource-btn,
+.filter-btn {
+  background: inherit !important;
+  color: inherit !important;
+}
+
+/* === Specifically reassert your intended colors === */
+.resources-section {
+  background: #fff !important;
+  color: #111 !important;
+}
+
+.resource-card {
+  background: #fff !important;
+  color: #111 !important;
+}
+
+.resource-btn {
+  background: #f4f4f4 !important;
+  color: #111 !important;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #111 !important;
+  color: #fff !important;
+}
+
+
+

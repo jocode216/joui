@@ -1,0 +1,315 @@
+/* contact.css */
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contact-header h1 {
+  font-size: 3rem;
+  background: red;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 15px;
+}
+
+.contact-subtitle {
+  font-size: 1.2rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Contact Cards Grid */
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.contact-card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--card-color);
+  transition: height 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.contact-card:hover::before {
+  height: 6px;
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.icon-wrapper {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--card-color) 0%, rgba(255, 255, 255, 0.1) 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-icon {
+  font-size: 28px;
+  color: white;
+}
+
+.sub-icon {
+  position: absolute;
+  bottom: -8px;
+  right: -8px;
+  background: white;
+  border-radius: 50%;
+  padding: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-sub-icon {
+  font-size: 16px;
+  color: var(--card-color);
+}
+
+.card-title {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin: 0;
+}
+
+/* Card Body */
+.card-body {
+  margin-bottom: 25px;
+}
+
+.contact-value {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--card-color);
+  margin-bottom: 12px;
+  word-break: break-all;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  border-left: 4px solid var(--card-color);
+}
+
+.contact-description {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Card Footer */
+.card-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.copy-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--card-color) 0%, rgba(255, 255, 255, 0.1) 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.copy-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  opacity: 0.9;
+}
+
+.copy-button.copied {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.copy-icon {
+  font-size: 16px;
+}
+
+/* Contact Notes */
+.contact-notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.note-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 16px;
+  padding: 25px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.note-card h3 {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.note-card ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note-card li {
+  padding: 8px 0;
+  color: #6b7280;
+  position: relative;
+  padding-left: 24px;
+  line-height: 1.5;
+}
+
+.note-card li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--card-color, #667eea);
+  font-size: 1.2rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 20px 15px;
+  }
+  
+  .contact-header h1 {
+    font-size: 2.2rem;
+  }
+  
+  .contact-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .contact-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .contact-card {
+    padding: 25px;
+  }
+  
+  .card-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .contact-notes {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .note-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .contact-subtitle {
+    font-size: 1rem;
+  }
+  
+  .contact-value {
+    font-size: 1.1rem;
+  }
+  
+  .copy-button {
+    padding: 10px 20px;
+    min-width: 100px;
+    font-size: 0.9rem;
+  }
+  
+  .note-card h3 {
+    font-size: 1.1rem;
+  }
+  
+  .note-card li {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation for copy feedback */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-card {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.contact-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.contact-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.contact-card:nth-child(3) {
+  animation-delay: 0.3s;
+}

@@ -1,0 +1,286 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: white;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 2.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(220, 38, 38, 0.1);
+  border-left: 6px solid #dc2626;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #dc2626;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.title h1 {
+  margin: 0;
+  color: #dc2626;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.title p {
+  margin: 0.75rem 0 0 0;
+  color: #6b7280;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Categories */
+.category {
+  margin-bottom: 3rem;
+}
+
+.category h2 {
+  margin: 0 0 1.5rem 0;
+  color: #1f2937;
+  font-size: 1.8rem;
+  font-weight: 700;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #dc2626;
+}
+
+/* Questions */
+.question {
+  margin-bottom: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.question:hover {
+  border-color: #dc2626;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.1);
+}
+
+.summary {
+  padding: 1.5rem;
+  background: #f8fafc;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.summary:hover {
+  background: #f1f5f9;
+}
+
+.summary strong {
+  color: #1f2937;
+}
+
+.answer {
+  padding: 1.5rem;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+}
+
+.answer p {
+  margin-bottom: 1rem;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.answer ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+.answer li {
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+.answer strong {
+  color: #dc2626;
+}
+
+/* Code Blocks */
+.code {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: #1f2937;
+  border-radius: 8px;
+  border-left: 4px solid #dc2626;
+  overflow-x: auto;
+}
+
+.code pre {
+  margin: 0;
+  color: #f9fafb;
+  font-family: "Fira Code", "Monaco", "Cascadia Code", monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.code code {
+  font-family: inherit;
+}
+
+/* Comparison */
+.comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.comparisonItem {
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.comparisonItem h4 {
+  margin: 0 0 1rem 0;
+  color: #1f2937;
+  font-size: 1.1rem;
+}
+
+.comparisonItem ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.comparisonItem li {
+  margin-bottom: 0.5rem;
+  color: #4b5563;
+}
+
+/* Tips */
+.tips {
+  padding: 2rem;
+  background: #f0f9ff;
+  border-radius: 12px;
+  border-left: 6px solid #3b82f6;
+  margin-top: 3rem;
+}
+
+.tips h3 {
+  margin: 0 0 1rem 0;
+  color: #1f2937;
+  font-size: 1.5rem;
+}
+
+.tips ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.tips li {
+  margin-bottom: 0.75rem;
+  color: #4b5563;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 1.7rem;
+  }
+
+  .title h1 {
+    font-size: 2rem;
+  }
+
+  .comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .code {
+    padding: 1.25rem;
+  }
+
+  .code pre {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1.5rem 1rem;
+  }
+
+  .title h1 {
+    font-size: 1.7rem;
+  }
+
+  .title p {
+    font-size: 1rem;
+  }
+
+  .summary {
+    padding: 1.25rem;
+    font-size: 1rem;
+  }
+
+  .answer {
+    padding: 1.25rem;
+  }
+
+  .tips {
+    padding: 1.5rem;
+  }
+}
+
+/* Animation for details */
+details[open] summary {
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 0;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::after {
+  content: "▶";
+  float: right;
+  transition: transform 0.3s ease;
+  color: #dc2626;
+}
+
+details[open] summary::after {
+  transform: rotate(90deg);
+}
