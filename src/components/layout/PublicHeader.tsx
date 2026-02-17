@@ -12,6 +12,9 @@ export default function PublicHeader() {
           {[
             { label: "Courses", path: "/courses" },
             { label: "About", path: "/about" },
+            { label: "Resource", path: "/resource" },
+            { label: "Roadmap", path: "/roadmap" },
+            { label: "Achievement", path: "/achievement" },
           ].map((item) => (
             <Link
               key={item.path}

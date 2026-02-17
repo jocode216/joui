@@ -15,6 +15,15 @@ import AdminUsers from "./pages/admin/AdminUsers";
 import AdminEnrollmentRequests from "./pages/admin/AdminEnrollmentRequests";
 import AdminTeacherRequests from "./pages/admin/AdminTeacherRequests";
 import NotFound from "./pages/NotFound";
+import CoursesShowcase from "./Enrollement/CoursesShowcase";
+import Blog from "./dataIhave/blog/Blog";
+import Sample from "./dataIhave/blog/Sample";
+import About from "./dataIhave/about/About";
+import Resource from "./dataIhave/resourse/Resource";
+import Roadmap from "./dataIhave/roadmap/Roadmap";
+import Jocode from "./dataIhave/jocodes/Jocode";
+import Footer from "./dataIhave/footer/Footer";
+import Contact from "./Enrollement/contact/Contact";
 
 const queryClient = new QueryClient();
 
@@ -26,15 +35,36 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<Landing />} />
+            <Route
+              path="/"
+              element={
+                <>
+                  <Landing />
+                  <CoursesShowcase />
+                  <Sample />
+                  <Contact />
+                  <Footer />
+                </>
+              }
+            />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+
+            <Route path="/tutorial" element={<Blog />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/resource" element={<Resource />} />
+            <Route path="/roadmap" element={<Roadmap />} />
+            <Route path="/achievement" element={<Jocode />} />
+
             <Route path="/courses" element={<CoursesBrowser />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/my-courses" element={<MyCourses />} />
             <Route path="/students" element={<TeacherStudents />} />
             <Route path="/admin/users" element={<AdminUsers />} />
-            <Route path="/admin/requests" element={<AdminEnrollmentRequests />} />
+            <Route
+              path="/admin/requests"
+              element={<AdminEnrollmentRequests />}
+            />
             <Route path="/admin/teachers" element={<AdminTeacherRequests />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

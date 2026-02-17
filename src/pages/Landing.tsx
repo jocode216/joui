@@ -40,31 +40,6 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Features */}
-      <section className="py-16 px-4 bg-secondary/50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold text-foreground text-center mb-10">
-            Why Jocode?
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { title: "Structured Learning", desc: "No random tutorials. Follow a clear path from basics to mastery." },
-              { title: "Real Projects", desc: "Build production-ready applications with guidance from experienced mentors." },
-              { title: "Community Support", desc: "Learn alongside fellow builders. Ask questions, share progress, grow together." },
-            ].map((f) => (
-              <div key={f.title} className="dash-card text-center p-8">
-                <h3 className="text-lg font-semibold text-foreground mb-2">{f.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-8 text-center text-sm text-muted-foreground border-t border-border">
-        © 2024 Jocode. All rights reserved.
-      </footer>
     </div>
   );
 }
