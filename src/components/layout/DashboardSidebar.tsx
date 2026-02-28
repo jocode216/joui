@@ -7,8 +7,12 @@ import {
   ClipboardList,
   GraduationCap,
   Search,
-  UserCheck,
-  ChevronDown,
+  ChevronLeft,
+  LogOut,
+  Award,
+  Plus,
+  FolderOpen,
+  CheckSquare,
 } from "lucide-react";
 
 const navItems = {
@@ -16,88 +20,124 @@ const navItems = {
     { title: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
     { title: "My Courses", path: "/my-courses", icon: BookOpen },
     { title: "Browse Courses", path: "/courses", icon: Search },
+    { title: "My Requests", path: "/my-requests", icon: ClipboardList },
+    { title: "My Certificates", path: "/my-certificates", icon: Award },
   ],
   teacher: [
     { title: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
-    { title: "My Courses", path: "/my-courses", icon: BookOpen },
+    { title: "Add Course", path: "/admin/addcourse", icon: Plus },
     { title: "Students", path: "/students", icon: Users },
+    { title: "My Certificates", path: "/my-certificates", icon: Award },
   ],
   admin: [
     { title: "Dashboard", path: "/dashboard", icon: LayoutDashboard },
     { title: "Users", path: "/admin/users", icon: Users },
-    { title: "Courses", path: "/courses", icon: BookOpen },
-    { title: "Requests", path: "/admin/requests", icon: ClipboardList },
+    { title: "Courses", path: "/admin/courses", icon: BookOpen },
+    { title: "Approvals", path: "/admin/approvals", icon: CheckSquare },
     { title: "Teachers", path: "/admin/teachers", icon: GraduationCap },
+    { title: "Certificates", path: "/admin/certificates", icon: Award },
   ],
 };
 
 const getInitials = (name: string) =>
   name
-    .split(" ")
-    .map((p) => p[0])
-    .slice(0, 2)
-    .join("")
-    .toUpperCase();
+    ? name
+        .split(" ")
+        .map((p) => p[0])
+        .slice(0, 2)
+        .join("")
+        .toUpperCase()
+    : "??";
 
-export default function DashboardSidebar() {
-  const { role, setRole, userName } = useRole();
+interface DashboardSidebarProps {
+  className?: string;
+  onClose?: () => void;
+}
+
+export default function DashboardSidebar({ className, onClose }: DashboardSidebarProps) {
+  const { role, userName } = useRole();
   const location = useLocation();
-  const items = navItems[role];
+  const items = navItems[role as keyof typeof navItems] || [];
+
+  const getLinkClasses = (isActive: boolean) => {
+    const baseClasses = 'flex items-center gap-3 px-3 py-2 rounded-md transition-colors whitespace-nowrap';
+    const activeClasses = isActive 
+      ? 'bg-primary text-primary-foreground' 
+      : 'text-muted-foreground hover:bg-muted hover:text-foreground';
+    
+    return `${baseClasses} ${activeClasses}`;
+  };
 
   return (
-    <aside className="w-60 border-r border-border bg-card flex flex-col min-h-screen shrink-0">
-      {/* Logo */}
-      <div className="p-5 border-b border-border">
-        <Link to="/" className="text-xl font-bold text-foreground">
+    <aside className={`group fixed left-0 top-0 z-40 h-screen w-64 md:w-20 md:hover:w-64 border-r border-border bg-background transition-all duration-300 ease-in-out overflow-hidden shadow-lg ${className || ''}`}>
+      {/* Header */}
+      <div className="flex h-16 items-center border-b border-border px-6 justify-between whitespace-nowrap">
+        <Link to="/" className="text-xl font-semibold tracking-tight md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
           Jocode
         </Link>
+        {onClose && (
+          <button 
+            onClick={onClose} 
+            className="md:hidden text-muted-foreground hover:text-foreground"
+          >
+            <ChevronLeft className="h-5 w-5" />
+          </button>
+        )}
+        <span className="ml-2 text-xs text-muted-foreground capitalize hidden md:inline">
+          {role}
+        </span>
       </div>
 
-      {/* Nav */}
-      <nav className="flex-1 p-3 space-y-1">
+      {/* Navigation */}
+      <nav className="flex flex-col gap-1 p-4">
         {items.map((item) => {
-          const active = location.pathname === item.path;
+          const isActive = location.pathname === item.path || 
+                          (item.path === "/admin/certificates" && location.pathname.startsWith("/admin/certificates")) ||
+                          (item.path === "/my-certificates" && location.pathname === "/my-certificates");
+          
           return (
             <Link
               key={item.path}
               to={item.path}
-              className={active ? "sidebar-link-active" : "sidebar-link"}
+              className={getLinkClasses(isActive)}
             >
-              <item.icon className="w-4 h-4" />
-              <span>{item.title}</span>
+              <item.icon className="h-5 w-5 min-w-[20px]" />
+              <span className="md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+                {item.title}
+              </span>
             </Link>
           );
         })}
       </nav>
 
-      {/* Role Switcher (Demo) */}
-      <div className="p-3 border-t border-border space-y-3">
-        <label className="text-xs text-muted-foreground font-medium uppercase tracking-wider">
-          Demo Role
-        </label>
-        <div className="relative">
-          <select
-            value={role}
-            onChange={(e) => setRole(e.target.value as "user" | "teacher" | "admin")}
-            className="w-full appearance-none bg-secondary text-foreground text-sm rounded-lg px-3 py-2 pr-8 border border-border focus:outline-none focus:ring-2 focus:ring-primary/20"
-          >
-            <option value="user">Student</option>
-            <option value="teacher">Teacher</option>
-            <option value="admin">Admin</option>
-          </select>
-          <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
-        </div>
-
+      {/* Footer with User Info */}
+      <div className="absolute bottom-0 left-0 right-0 border-t border-border p-4 whitespace-nowrap">
         {/* User info */}
         <div className="flex items-center gap-3 bg-accent rounded-lg p-2.5">
-          <div className="w-9 h-9 rounded-full bg-foreground text-background flex items-center justify-center text-xs font-bold">
-            {getInitials(userName)}
+          <div className="w-9 h-9 rounded-full bg-foreground text-background flex items-center justify-center text-xs font-bold shrink-0">
+            {getInitials(userName || "")}
           </div>
-          <div className="min-w-0">
-            <p className="text-sm font-medium text-foreground truncate">{userName}</p>
+          <div className="min-w-0 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+            <p className="text-sm font-medium text-foreground truncate">{userName || "User"}</p>
             <p className="text-xs text-muted-foreground capitalize">{role}</p>
           </div>
         </div>
+
+        {/* Logout Link */}
+        <Link 
+          to="/login"
+          onClick={(e) => {
+            e.preventDefault();
+            localStorage.clear();
+            window.location.href = "/login";
+          }}
+          className="flex items-center gap-3 px-3 py-2 rounded-md text-muted-foreground hover:bg-muted hover:text-foreground transition-colors mt-2"
+        >
+          <LogOut className="h-5 w-5 min-w-[20px]" />
+          <span className="md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
+            Logout
+          </span>
+        </Link>
       </div>
     </aside>
   );

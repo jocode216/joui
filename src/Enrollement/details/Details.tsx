@@ -3,6 +3,7 @@ import "./details.css";
 import { Link } from "react-router-dom";
 import Whymentor from "../whymentor/Whymentor";
 import { ScaleLoader } from "react-spinners";
+import DashboardLayout from "@/components/layout/DashboardLayout";
 
 interface Course {
   id: number;
@@ -158,126 +159,127 @@ const Details: React.FC = () => {
   }
 
   return (
-    <div className="premium-wrapper">
-      <div className="vertical-layout">
-        {/* Left Side: Video Player */}
-        <div className="left-column">
-          {/* 🎬 Main Video Player */}
-          <div className="video-player-container">
-            {currentVideo ? (
-              <iframe
-                key={currentVideo}
-                width="100%"
-                height="450"
-                src={getYoutubeEmbedUrl(currentVideo)}
-                title="Course Video"
-                frameBorder={0}
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                allowFullScreen
-              ></iframe>
-            ) : (
-              <div className="video-placeholder">
-                <p>Select a course to start learning 🎓</p>
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Right Side: Course List */}
-        <div className="right-column">
-          <div className="course-list-header">
-            <h2>Course Videos</h2>
-            <p>Click on any video to play it</p>
-          </div>
-
-          {/* Vertical Course List */}
-          <div className="vertical-course-list">
-            {courses.map((course) => {
-              const videoIdMatch = course.video_url.match(
-                /(?:youtube\.com\/.*v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/
-              );
-              const videoId = videoIdMatch ? videoIdMatch[1] : null;
-              const thumbnail = videoId
-                ? `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
-                : "/placeholder.jpg";
-              const locked = course.is_premium && !isEnrolled;
-
-              return (
-                <div 
-                  key={course.id}
-                  className={`vertical-course-item ${locked ? "locked" : ""} ${
-                    course.isFreeTrial ? "free-trial" : ""
-                  } ${currentVideo === course.video_url ? "active" : ""}`}
-                  onClick={() =>
-                    !locked &&
-                    handleVideoPlay(course.video_url, course.is_premium)
-                  }
-                >
-                  <div className="course-thumbnail">
-                    <img
-                      src={thumbnail}
-                      alt={course.title}
-                      onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).src =
-                          "/placeholder.jpg";
-                      }}
-                    />
-                    {locked && (
-                      <div className="lock-overlay">
-                        <div className="lock-icon">🔒</div>
-                      </div>
-                    )}
-                    {course.isFreeTrial && (
-                      <div className="free-badge">Free</div>
-                    )}
-                    {currentVideo === course.video_url && (
-                      <div className="playing-badge">▶ Playing</div>
-                    )}
-                  </div>
-
-                  <div className="course-content">
-                    <h3 style={{fontSize:'14px'}} className="course-title" >
-                      {course.title}
-                      {locked && <span className="premium-badge">Premium</span>}
-                    </h3>
-                    <p className="course-description">{course.description}</p>
-                    {locked && (
-                      <button
-                        className="enroll-btn"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleEnroll();
-                        }}
-                      >
-                        Enroll to Unlock
-                      </button>
-                    )}
-                  </div>
+    <DashboardLayout>
+      <div className="premium-wrapper">
+        <div className="vertical-layout">
+          {/* Left Side: Video Player */}
+          <div className="left-column">
+            {/* 🎬 Main Video Player */}
+            <div className="video-player-container">
+              {currentVideo ? (
+                <iframe
+                  key={currentVideo}
+                  width="100%"
+                  height="450"
+                  src={getYoutubeEmbedUrl(currentVideo)}
+                  title="Course Video"
+                  frameBorder={0}
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                  allowFullScreen
+                ></iframe>
+              ) : (
+                <div className="video-placeholder">
+                  <p>Select a course to start learning 🎓</p>
                 </div>
-              );
-            })}
+              )}
+            </div>
           </div>
 
-          {/* Enrollment Button */}
-          <div className="enrollment-section">
-            <h3>Ready to Start Learning?</h3>
-            <p>
-              Enroll now to get access to all premium content and mentorship!
-            </p>
-            <Link to="/register">
-              <button className="enroll-btn-large">
-                Proceed to Enrollment
-              </button>
-            </Link>
+          {/* Right Side: Course List */}
+          <div className="right-column">
+            <div className="course-list-header">
+              <h2>Course Videos</h2>
+              <p>Click on any video to play it</p>
+            </div>
+
+            {/* Vertical Course List */}
+            <div className="vertical-course-list">
+              {courses.map((course) => {
+                const videoIdMatch = course.video_url.match(
+                  /(?:youtube\.com\/.*v=|youtu\.be\/)([a-zA-Z0-9_-]{11})/,
+                );
+                const videoId = videoIdMatch ? videoIdMatch[1] : null;
+                const thumbnail = videoId
+                  ? `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`
+                  : "/placeholder.jpg";
+                const locked = course.is_premium && !isEnrolled;
+
+                return (
+                  <div
+                    key={course.id}
+                    className={`vertical-course-item ${locked ? "locked" : ""} ${
+                      course.isFreeTrial ? "free-trial" : ""
+                    } ${currentVideo === course.video_url ? "active" : ""}`}
+                    onClick={() =>
+                      !locked &&
+                      handleVideoPlay(course.video_url, course.is_premium)
+                    }
+                  >
+                    <div className="course-thumbnail">
+                      <img
+                        src={thumbnail}
+                        alt={course.title}
+                        onError={(e) => {
+                          (e.currentTarget as HTMLImageElement).src =
+                            "/placeholder.jpg";
+                        }}
+                      />
+                      {locked && (
+                        <div className="lock-overlay">
+                          <div className="lock-icon">🔒</div>
+                        </div>
+                      )}
+                      {currentVideo === course.video_url && (
+                        <div className="playing-badge">▶ Playing</div>
+                      )}
+                    </div>
+
+                    <div className="course-content">
+                      <h3 style={{ fontSize: "14px" }} className="course-title">
+                        {course.title}
+                        {locked && (
+                          <span className="premium-badge">Premium</span>
+                        )}
+                      </h3>
+                      <p className="course-description">{course.description}</p>
+                      {locked && (
+                        <button
+                          className="enroll-btn"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleEnroll();
+                          }}
+                        >
+                          Enroll to Unlock
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Enrollment Button */}
+            <div className="enrollment-section">
+              <h3>Ready to Start Learning?</h3>
+              <p>
+                Enroll now to get access to all premium content and mentorship!
+              </p>
+              <Link to="/register">
+                <button className="enroll-btn-large">
+                  Proceed to Enrollment
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Why Mentor Section */}
-      <div>
-        <Whymentor />
+        {/* Why Mentor Section */}
+        <div>
+          <Whymentor />
+        </div>
       </div>
-    </div>
+    </DashboardLayout>
   );
 };
 

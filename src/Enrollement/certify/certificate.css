@@ -1,0 +1,176 @@
+/* certificate.css */
+.certificate-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+  background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
+  border-radius: 20px;
+}
+
+.certificate-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(255, 107, 53, 0.1);
+  border: 1px solid rgba(255, 107, 53, 0.1);
+}
+
+.certificate-container h2 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.certificate-container h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #ff6b35;
+  border-radius: 2px;
+}
+
+.certificate-container p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  text-align: justify;
+  padding: 0 10px;
+}
+
+.certificate-container p:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.certificate-image {
+  margin-top: 40px;
+  text-align: center;
+  position: relative;
+  padding: 20px;
+  background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.15);
+  transition: all 0.3s ease;
+}
+
+.certificate-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.25);
+}
+
+.certificate-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  transition: all 0.3s ease;
+}
+
+.certificate-image img:hover {
+  transform: scale(1.02);
+}
+
+/* Optional: Add a decorative element */
+.certificate-image::before {
+  content: '✨';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  font-size: 2rem;
+  opacity: 0.3;
+  transform: rotate(-15deg);
+}
+
+.certificate-image::after {
+  content: '🎯';
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  font-size: 2rem;
+  opacity: 0.3;
+  transform: rotate(15deg);
+}
+
+/* Responsive Design - Matching testimonials.css */
+@media (max-width: 768px) {
+  .certificate-section {
+    margin: 40px auto;
+    padding: 0 15px;
+  }
+  
+  .certificate-container {
+    padding: 30px 15px;
+  }
+  
+  .certificate-container h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .certificate-container p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 5px;
+  }
+  
+  .certificate-image {
+    margin-top: 30px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .certificate-container h2 {
+    font-size: 1.75rem;
+  }
+  
+  .certificate-container p {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+  
+  .certificate-image {
+    margin-top: 25px;
+    padding: 10px;
+  }
+  
+  .certificate-image::before,
+  .certificate-image::after {
+    font-size: 1.5rem;
+  }
+}
+
+/* Optional: Add a subtle animation on page load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.certificate-container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Optional: Add a special style for the QR code mention */
+.certificate-container p:last-of-type {
+  background: rgba(255, 107, 53, 0.05);
+  padding: 15px 20px;
+  border-radius: 10px;
+  border-left: 3px solid #ff6b35;
+  font-weight: 500;
+}
